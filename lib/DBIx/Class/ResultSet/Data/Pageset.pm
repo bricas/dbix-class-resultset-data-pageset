@@ -42,7 +42,7 @@ sub pageset {
             entries_per_page
             total_entries
             current_page
-        ), )
+        ), ),
         pages_per_set => $attrs->{ pages_per_set } || 10,
     } );
 }
