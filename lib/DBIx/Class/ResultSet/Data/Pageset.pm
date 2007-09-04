@@ -7,7 +7,7 @@ use base qw( DBIx::Class::ResultSet );
 
 use Data::Pageset ();
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -38,11 +38,11 @@ sub pageset {
     my $attrs = $self->{attrs};
 
     return Data::Pageset->new( {
-        map { $_ => $pager->$_ } qw(
+        ( map { $_ => $pager->$_ } qw(
             entries_per_page
             total_entries
             current_page
-        ),
+        ), )
         pages_per_set => $attrs->{ pages_per_set } || 10,
     } );
 }
