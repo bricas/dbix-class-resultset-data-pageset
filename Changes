@@ -1,6 +1,6 @@
 Revision history for Perl extension DBIx::Class::ResultSet::Data::Pageset.
 
-0.01  Tue Set 04 2007
+0.02  Tue Set 04 2007
     - fix map to not include the pages_per_set option
 
 0.01  Tue Sep 04 2007
