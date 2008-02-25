@@ -7,7 +7,7 @@ use base qw( DBIx::Class::ResultSet );
 
 use Data::Pageset ();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -17,6 +17,9 @@ DBIx::Class::ResultSet::Data::Pageset - Get a Data::Pageset pager from a results
 
     my $rs = $schema->resultset('Foo')->search( { }, { pages_per_set => 5 } );
     my $pager = $rs->pageset;
+    
+    # sliding pager
+    my $rs2 = $schema->resultset('Foo')->search( { }, { pageset_mode => 'slide' } );
 
 =head1 DESCRIPTION
 
@@ -28,7 +31,8 @@ rather than the standard L<Data::Page> object.
 =head2 pageset( )
 
 Returns a L<Data::Pageset> object for paging. This will grab the C<pages_per_set>
-option from the resultset attributes or use C<10> as the default.
+option (default: C<10>) and the C<pageset_mode> option (default: C<fixed>) from the
+resultset attributes.
 
 =cut
 
@@ -44,12 +48,13 @@ sub pageset {
             current_page
         ), ),
         pages_per_set => $attrs->{ pages_per_set } || 10,
+        mode          => $attrs->{ pageset_mode }  || 'fixed',
     } );
 }
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Brian Cassidy
+Copyright 2008 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
@@ -59,6 +64,8 @@ it under the same terms as Perl itself.
 =over 4 
 
 =item * L<DBIx::Class>
+
+=item * L<Data::Pageset>
 
 =back
 

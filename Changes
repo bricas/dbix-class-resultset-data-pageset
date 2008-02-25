@@ -1,6 +1,9 @@
 Revision history for Perl extension DBIx::Class::ResultSet::Data::Pageset.
 
-0.02  Tue Set 04 2007
+0.03  Mon Feb 25 2008
+    - added support for "mode" option (Derek Del Conte)
+
+0.02  Tue Sep 04 2007
     - fix map to not include the pages_per_set option
 
 0.01  Tue Sep 04 2007
