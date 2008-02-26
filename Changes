@@ -1,5 +1,9 @@
 Revision history for Perl extension DBIx::Class::ResultSet::Data::Pageset.
 
+0.04  Tue Feb 26 2008
+    - added some real tests
+    - Makefile.PL fixes
+
 0.03  Mon Feb 25 2008
     - added support for "mode" option (Derek Del Conte)
 

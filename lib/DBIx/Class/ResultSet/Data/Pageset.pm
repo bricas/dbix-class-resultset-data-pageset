@@ -7,7 +7,7 @@ use base qw( DBIx::Class::ResultSet );
 
 use Data::Pageset ();
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 NAME
 
@@ -15,6 +15,10 @@ DBIx::Class::ResultSet::Data::Pageset - Get a Data::Pageset pager from a results
 
 =head1 SYNOPSIS
 
+    # in your resultsource class
+    __PACKAGE__->resultset_class( 'DBIx::Class::ResultSet::Data::Pageset' );
+    
+    # in your calling code
     my $rs = $schema->resultset('Foo')->search( { }, { pages_per_set => 5 } );
     my $pager = $rs->pageset;
     
