@@ -30,6 +30,13 @@ DBIx::Class::ResultSet::Data::Pageset - Get a Data::Pageset pager from a results
 This is a simple way to allow you to get a L<Data::Pageset> object for paging
 rather than the standard L<Data::Page> object.
 
+=head1 INSTALLATION
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
 =head1 METHODS
 
 =head2 pageset( )
@@ -55,6 +62,10 @@ sub pageset {
         mode          => $attrs->{ pageset_mode }  || 'fixed',
     } );
 }
+
+=head1 AUTHOR
+
+Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
