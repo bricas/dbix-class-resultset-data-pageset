@@ -6,6 +6,10 @@ use Test::More;
 BEGIN {
     eval "use DBD::SQLite ();";
     plan skip_all => 'DBD::SQLite required to run this test' if $@;
+
+    eval "use SQL::Translator ();";
+    plan skip_all => 'SQL::Translator required to run this test' if $@;
+
     plan( tests => 11 );
 }
 

@@ -1,5 +1,8 @@
 Revision history for Perl extension DBIx::Class::ResultSet::Data::Pageset.
 
+0.05  Tue Feb 26 2008
+    - skip tests if SQL::Translator is missing (needed for deploy)
+
 0.04  Tue Feb 26 2008
     - added some real tests
     - Makefile.PL fixes
