@@ -1,4 +1,4 @@
-use inc::Module::Install 0.67;
+use inc::Module::Install 0.91;
 
 if ( -e 'MANIFEST.SKIP' ) {
     system( 'pod2text lib/DBIx/Class/ResultSet/Data/Pageset.pm > README' );
@@ -15,5 +15,6 @@ requires 'DBIx::Class';
 test_requires 'Test::More';
 test_requires 'File::Temp';
 
-auto_install;
+repository "http://github.com/bricas/dbix-class-resultset-data-pageset/tree/master";
+
 WriteAll;
